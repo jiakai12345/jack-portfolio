@@ -1,0 +1,12 @@
+# Local backups and generated previews
+backup-*/
+preview-*.png
+hiesther-*.png
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+

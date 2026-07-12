@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人作品集 | 联系</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fira+Code:wght@400;500;600&family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..900,40,1&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="contact">
+    <header class="app-header">
+      <a class="brand-lockup" href="index.html">
+        <img src="assets/personal-mark.svg" alt="" class="brand-mark" />
+        <span><strong data-bind="name">你的名字</strong><em data-bind="handle">Portfolio OS</em></span>
+      </a>
+      <nav class="nav-pills" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="resume.html">简历</a>
+        <a href="works.html">作品集</a>
+        <a href="about.html">关于</a>
+        <a class="is-active" href="contact.html">联系</a>
+      </nav>
+    </header>
+
+    <main class="page-shell contact-layout">
+      <section class="contact-panel">
+        <p class="eyebrow">Say Hi</p>
+        <h1>先把入口放好，之后换成你的真实邮箱和社交账号。</h1>
+        <p class="lead">适合放招聘、合作、项目咨询和社交平台链接。页面保持安静，让对方知道下一步怎么联系你。</p>
+        <div class="contact-actions" aria-label="联系方式">
+          <button class="contact-pill is-active" type="button" data-contact-card="email">Email</button>
+          <button class="contact-pill" type="button" data-contact-card="xiaohongshu">小红书</button>
+          <button class="contact-pill" type="button" data-contact-card="douyin">抖音</button>
+        </div>
+      </section>
+      <aside class="contact-flip-scene" aria-live="polite">
+        <div class="contact-flip-card" id="contactFlipCard">
+          <article class="contact-card-face contact-card-front" id="contactCardFace">
+            <p class="hand-note" id="contactCardKicker">copy email</p>
+            <strong id="contactCardTitle">hello@example.com</strong>
+            <p id="contactCardBody">点击下面按钮复制邮箱，后面替换成你的真实地址。</p>
+            <button class="copy-email" type="button" id="copyEmail">复制邮箱</button>
+          </article>
+          <article class="contact-card-face contact-card-back" id="contactCardBack">
+            <p class="hand-note">scan me</p>
+            <strong>扫码关注</strong>
+            <div class="qr-placeholder">QR</div>
+            <p>后面这里换成二维码图片。</p>
+          </article>
+        </div>
+      </aside>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

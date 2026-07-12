@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人作品集 | 作品集</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fira+Code:wght@400;500;600&family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..900,40,1&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="works">
+    <header class="app-header">
+      <a class="brand-lockup" href="index.html">
+        <img src="assets/personal-mark.svg" alt="" class="brand-mark" />
+        <span><strong data-bind="name">你的名字</strong><em data-bind="handle">Portfolio OS</em></span>
+      </a>
+      <nav class="nav-pills" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="resume.html">简历</a>
+        <a class="is-active" href="works.html">作品集</a>
+        <a href="about.html">关于</a>
+        <a href="contact.html">联系</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-intro">
+        <p class="eyebrow">Selected Works</p>
+        <h1>作品集先放轮廓，之后逐个换成你的真实案例。</h1>
+        <p class="lead">这里会展示项目分类、项目卡片和案例弹窗。现在先用占位项目验证动线。</p>
+      </section>
+      <section class="works-toolbar">
+        <div class="filter-tabs" id="filterTabs" aria-label="作品分类筛选"></div>
+      </section>
+      <section class="project-grid" id="projectGrid" aria-label="项目列表"></section>
+    </main>
+
+    <div class="modal" id="projectModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <article class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" type="button" data-close-modal aria-label="关闭">×</button>
+        <p class="eyebrow" id="modalCategory"></p>
+        <h2 id="modalTitle"></h2>
+        <p id="modalSummary"></p>
+        <dl class="case-meta">
+          <div><dt>Impact</dt><dd id="modalImpact"></dd></div>
+          <div><dt>Role</dt><dd id="modalRole"></dd></div>
+          <div><dt>Tools</dt><dd id="modalTools"></dd></div>
+        </dl>
+      </article>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

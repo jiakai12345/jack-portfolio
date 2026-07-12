@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>贾凯 / Jack | 关于我</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fira+Code:wght@400;500;600&family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..900,40,1&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="about">
+    <header class="app-header">
+      <a class="brand-lockup" href="index.html">
+        <img src="assets/personal-mark.svg" alt="" class="brand-mark" />
+        <span><strong data-bind="name">贾凯 / Jack</strong><em data-bind="handle">Portfolio OS</em></span>
+      </a>
+      <nav class="nav-pills" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="resume.html">简历</a>
+        <a href="works.html">作品集</a>
+        <a class="is-active" href="about.html">关于</a>
+        <a href="contact.html">联系</a>
+      </nav>
+    </header>
+
+    <main class="about-os-app" aria-label="关于我的个人系统画布">
+      <div class="about-toolbar">
+        <div class="canvas-brand" aria-label="Jack Canvas">
+          <img src="assets/personal-mark.svg" alt="" />
+          <span>Jack Canvas</span>
+        </div>
+        <div class="about-toolbar-center">
+          <span>Scroll 缩放</span>
+          <span>Drag 移动画布</span>
+          <span>Card 可拖动 / 双击文字可编辑</span>
+        </div>
+        <button class="tb-connect" type="button" id="aboutAddCard">＋ 新建</button>
+        <button class="tb-connect" type="button" id="aboutConnectMode">连线</button>
+        <button class="tb-connect" type="button" id="aboutSaveCanvas">保存</button>
+        <button class="tb-connect" type="button" id="aboutClearCanvas">重置</button>
+        <button class="tb-connect" type="button" id="aboutResetView">回到中心</button>
+      </div>
+
+      <div class="about-template-panel" id="aboutTemplatePanel" aria-hidden="true">
+        <p class="hand-layer">New Card</p>
+        <button type="button" data-card-template="text"><strong>文字卡</strong><span>标题 + 正文</span></button>
+        <button type="button" data-card-template="quote"><strong>引用卡</strong><span>一句话 / 座右铭</span></button>
+        <button type="button" data-card-template="sticky"><strong>便利贴</strong><span>短想法</span></button>
+        <button type="button" data-card-template="dark"><strong>深色卡</strong><span>重点模块</span></button>
+        <button type="button" data-card-template="link"><strong>链接卡</strong><span>跳转页面或外链</span></button>
+        <button type="button" data-card-template="tags"><strong>标签卡</strong><span>技能 / 关键词</span></button>
+      </div>
+
+      <aside class="canvas-sidebar about-layer-sidebar" aria-label="画布图层">
+        <div class="layer-panel" id="aboutLayerPanel">
+          <p class="hand-layer">Layers</p>
+          <button class="layer-row is-active" type="button" data-focus-card="about-card-profile"><span></span>个人信息<em></em></button>
+          <button class="layer-row" type="button" data-focus-card="about-card-photo"><span></span>照片占位<em></em></button>
+          <button class="layer-row" type="button" data-focus-card="about-card-timeline"><span></span>经历时间线<em></em></button>
+          <button class="layer-row" type="button" data-focus-card="about-card-story"><span></span>核心叙事<em></em></button>
+          <button class="layer-row" type="button" data-focus-card="about-card-skills"><span></span>技能标签<em></em></button>
+          <button class="layer-row" type="button" data-focus-card="about-card-now"><span></span>当前状态<em></em></button>
+        </div>
+        <div class="minimap-card">
+          <p class="hand-layer">Minimap</p>
+          <div class="mini-map" id="aboutMiniMap" aria-label="画布缩略图">
+            <div class="minimap-viewport-lite" id="aboutMiniViewport"></div>
+          </div>
+        </div>
+      </aside>
+
+      <section class="about-canvas-area" id="aboutCanvasArea">
+        <div class="about-canvas-grid" id="aboutCanvasGrid"></div>
+        <div class="about-canvas-transform" id="aboutCanvasTransform">
+          <svg class="about-connections-svg" id="aboutConnectionsSvg" viewBox="0 0 2400 1600" aria-hidden="true"></svg>
+
+          <div class="canvas-deco star" style="left: 430px; top: 86px">✦</div>
+          <div class="canvas-deco dot" style="left: 820px; top: 160px"></div>
+          <div class="canvas-deco wave" style="left: 1120px; top: 500px">〰</div>
+          <div class="canvas-deco star" style="left: 1560px; top: 720px">✦</div>
+
+          <article class="about-card about-card-photo" id="about-card-photo" data-card-title="照片占位" style="left: 220px; top: 220px">
+            <div class="card-tape yellow"></div>
+            <div class="card-controls"><span>⋮⋮</span><button type="button" data-delete-card aria-label="删除卡片">×</button></div>
+            <div class="photo-placeholder">
+              <span>PHOTO</span>
+              <strong>稍后放你的照片</strong>
+            </div>
+          </article>
+
+          <article class="about-card about-card-profile" id="about-card-profile" data-card-title="个人信息" style="left: 600px; top: 170px">
+            <div class="card-tape yellow"></div>
+            <div class="card-controls"><span>⋮⋮</span><button type="button" data-delete-card aria-label="删除卡片">×</button></div>
+            <div class="avatar-chip">J</div>
+            <p class="eyebrow">Profile</p>
+            <h1 contenteditable="true" spellcheck="false">贾凯 / Jack</h1>
+            <p contenteditable="true" spellcheck="false">TVC 广告摄影师 / 个人 IP 操盘手 / AIGC 内容创作者</p>
+            <div class="tag-row compact-tags">
+              <span class="pill">TVC</span>
+              <span class="pill">Personal IP</span>
+              <span class="pill">AIGC</span>
+            </div>
+            <div class="mini-actions">
+              <a href="resume.html">看简历</a>
+              <a href="works.html">看作品</a>
+            </div>
+          </article>
+
+          <article class="about-card about-card-timeline" id="about-card-timeline" data-card-title="经历时间线" style="left: 1120px; top: 160px">
+            <div class="card-tape blue"></div>
+            <div class="card-controls"><span>⋮⋮</span><button type="button" data-delete-card aria-label="删除卡片">×</button></div>
+            <p class="eyebrow">Experience Timeline</p>
+            <div class="canvas-timeline">
+              <div><time>Now</time><strong>AIGC 内容创作中</strong><span>建立个人作品库和新的创作系统</span></div>
+              <div><time>IP</time><strong>个人 IP 操盘</strong><span>整理表达、栏目、账号和长期内容资产</span></div>
+              <div><time>TVC</time><strong>广告摄影经验</strong><span>从商业影像里训练视觉判断和项目执行</span></div>
+            </div>
+          </article>
+
+          <article class="about-card about-card-story" id="about-card-story" data-card-title="核心叙事" style="left: 620px; top: 620px">
+            <div class="card-tape yellow"></div>
+            <div class="card-controls"><span>⋮⋮</span><button type="button" data-delete-card aria-label="删除卡片">×</button></div>
+            <p class="hand-note">core story</p>
+            <h2 contenteditable="true" spellcheck="false">我现在想做的事</h2>
+            <p contenteditable="true" spellcheck="false">
+              把过去做影像、做内容、做项目时积累下来的判断，重新整理成一个可以持续更新的个人系统。它不是一次性简历，而是我的创作现场。
+            </p>
+            <em>Stay Hungry, Stay Foolish</em>
+          </article>
+
+          <article class="about-card about-card-skills" id="about-card-skills" data-card-title="技能标签" style="left: 1120px; top: 650px">
+            <div class="card-tape blue"></div>
+            <div class="card-controls"><span>⋮⋮</span><button type="button" data-delete-card aria-label="删除卡片">×</button></div>
+            <p class="eyebrow">Skill Tags</p>
+            <div class="floating-tags">
+              <span>TVC</span>
+              <span>广告摄影</span>
+              <span>内容策略</span>
+              <span>个人 IP</span>
+              <span>Prompt</span>
+              <span>AIGC</span>
+              <span>作品库</span>
+              <span>视觉判断</span>
+            </div>
+          </article>
+
+          <article class="about-card about-card-now" id="about-card-now" data-card-title="当前状态" style="left: 270px; top: 760px">
+            <div class="card-tape yellow"></div>
+            <div class="card-controls"><span>⋮⋮</span><button type="button" data-delete-card aria-label="删除卡片">×</button></div>
+            <p class="eyebrow">Current Status</p>
+            <strong>空窗中 / AIGC 内容创作中 / 建立个人作品库中</strong>
+            <p>这个页面先放轮廓，后面我们再把真实经历、照片、代表项目和你自己的表达一点点替换上去。</p>
+          </article>
+        </div>
+
+        <div class="zoom-controls about-zoom-controls">
+          <button class="zoom-btn" type="button" id="aboutZoomOut">−</button>
+          <span class="zoom-pct" id="aboutZoomPct">85%</span>
+          <button class="zoom-btn" type="button" id="aboutZoomIn">＋</button>
+        </div>
+        <div class="canvas-help">
+          <span>Scroll</span> 缩放 · <span>Drag</span> 移动画布 · <span>Card</span> 可拖动
+        </div>
+      </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

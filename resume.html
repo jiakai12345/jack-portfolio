@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人作品集 | 简历</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fira+Code:wght@400;500;600&family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..900,40,1&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="resume">
+    <header class="app-header">
+      <a class="brand-lockup" href="index.html">
+        <img src="assets/personal-mark.svg" alt="" class="brand-mark" />
+        <span><strong data-bind="name">你的名字</strong><em data-bind="handle">Portfolio OS</em></span>
+      </a>
+      <nav class="nav-pills" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a class="is-active" href="resume.html" aria-current="page">简历</a>
+        <a href="works.html">作品集</a>
+        <a href="about.html">关于</a>
+        <a href="contact.html">联系</a>
+      </nav>
+    </header>
+
+    <div class="resume-progress" aria-hidden="true"><span id="resumeProgressBar"></span></div>
+
+    <main class="page-shell resume-layout">
+      <section class="resume-profile" data-resume-reveal style="--resume-order: 0">
+        <div class="resume-statusline">
+          <span data-bind="availability">空窗中 / AIGC 内容创作中</span>
+          <i>CN / REMOTE</i>
+        </div>
+        <p class="eyebrow">Resume Snapshot</p>
+        <h1><span data-bind="name">你的名字</span><small data-bind="role">产品设计 / 前端创作 / AI 工作流</small></h1>
+        <p class="lead" data-bind="summary"></p>
+        <div class="tag-row" id="tagList"></div>
+        <button class="primary-action" type="button" id="printResume"><span aria-hidden="true">↓</span>打印 / 保存 PDF</button>
+      </section>
+
+      <section class="resume-board" data-resume-reveal style="--resume-order: 1">
+        <div class="board-section" data-resume-section>
+          <div class="section-heading">
+            <span>01</span>
+            <h2>经历</h2>
+          </div>
+          <div class="timeline" id="experienceList"></div>
+        </div>
+        <div class="board-section" data-resume-section>
+          <div class="section-heading">
+            <span>02</span>
+            <h2>能力</h2>
+          </div>
+          <div class="skill-grid compact" id="skillList"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
